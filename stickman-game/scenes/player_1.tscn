@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ccr05impkfyve"]
 
-[ext_resource type="Script" uid="uid://ci3pqhv47ks7j" path="res://scenes/player_1.gd" id="1_7m5b5"]
+[ext_resource type="Script" uid="uid://ci3pqhv47ks7j" path="res://scripts/player.gd" id="1_7m5b5"]
 [ext_resource type="Texture2D" uid="uid://cfjrt7cjfb6y" path="res://assets/stickman_all/fitted_parts_for_new_stickman/aligned_layers/head.png" id="1_cyakk"]
 [ext_resource type="Texture2D" uid="uid://7j2oaa31lhr3" path="res://assets/stickman_all/fitted_parts_for_new_stickman/left_leg_lower.png" id="2_7m5b5"]
 [ext_resource type="Texture2D" uid="uid://bgjiv3k7rpqoh" path="res://assets/stickman_all/original_size_parts/left_leg_upper.png" id="3_xfu11"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://rbeijj0x0hdx" path="res://assets/stickman_all/original_size_parts/left_arm_upper.png" id="5_gf2bl"]
 [ext_resource type="Texture2D" uid="uid://ckvjjw1wdoxtl" path="res://assets/stickman_all/original_size_parts/right_arm_lower.png" id="5_ngimn"]
 [ext_resource type="Texture2D" uid="uid://cx578swyuxx7y" path="res://assets/stickman_all/fitted_parts_for_new_stickman/aligned_layers/torso.png" id="6_3wjnj"]
+[ext_resource type="Script" uid="uid://2y1emyd2dut8" path="res://scenes/ironsword.gd" id="6_ngimn"]
+[ext_resource type="Texture2D" uid="uid://nuu7ofxvbq8m" path="res://assets/swords/player1_silver_sword.png" id="6_xfu11"]
 [ext_resource type="Texture2D" uid="uid://cl6gplro4oypb" path="res://assets/stickman_all/fitted_parts_for_new_stickman/left_arm_lower.png" id="8_3x8tk"]
 [ext_resource type="Texture2D" uid="uid://cviuhxdu4bv2v" path="res://assets/stickman_all/fitted_parts_for_new_stickman/right_leg_lower.png" id="9_h7q5r"]
 
@@ -54,6 +56,7 @@ height = 481.23315
 script = ExtResource("1_7m5b5")
 
 [node name="head" type="RigidBody2D" parent="." unique_id=1672502205]
+center_of_mass_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="head" unique_id=1258336101]
 position = Vector2(-18, 18)
@@ -100,6 +103,20 @@ texture = ExtResource("4_dkxmd")
 position = Vector2(408.00003, -71.99999)
 rotation = 2.5652423
 shape = SubResource("CapsuleShape2D_b135w")
+
+[node name="ironsword" type="Area2D" parent="lower right arm" unique_id=1767056331]
+script = ExtResource("6_ngimn")
+
+[node name="Sprite2D" type="Sprite2D" parent="lower right arm/ironsword" unique_id=505161146]
+position = Vector2(368, 128)
+scale = Vector2(1.0231116, 0.9960541)
+texture = ExtResource("6_xfu11")
+offset = Vector2(203.30139, -321.26776)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lower right arm/ironsword" unique_id=456532455]
+position = Vector2(520, -103.999985)
+rotation = 1.5219356
+polygon = PackedVector2Array(-0.78147125, 15.9808655, -367.5218, -346.3636, -440.39313, -494.09912, -276.11023, -413.97968, 58.277534, -45.20758, 108.1739, -82.81549, 102.918564, -139.1394, 155.72589, -72.48071, 117, -16, 116, 8, 201, 102, 242, 115, 254.30737, 204.66492, 182.39331, 201.14835, 153.16663, 143.65225, 61.188488, 59.05899, 37.217133, 57.88678, -20, 111, -66.658745, 52.80728, -26.315758, 46.770508)
 
 [node name="upper right arm" type="RigidBody2D" parent="lower right arm" unique_id=460758333]
 
@@ -222,3 +239,8 @@ node_b = NodePath("../lower right leg/upper right leg")
 position = Vector2(272, 512)
 node_a = NodePath("../upper left leg")
 node_b = NodePath("../lower left leg")
+
+[node name="PinJoint2D10" type="PinJoint2D" parent="." unique_id=2128755325]
+position = Vector2(464, 0)
+node_a = NodePath("../lower right arm")
+node_b = NodePath("../lower right arm/ironsword")
