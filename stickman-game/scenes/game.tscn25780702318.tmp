@@ -36,10 +36,10 @@ shape = SubResource("SegmentShape2D_0a447")
 position = Vector2(-910, -7155)
 shape = SubResource("SegmentShape2D_uwrxv")
 
-[node name="player" parent="." unique_id=1435591351 groups=["player"] instance=ExtResource("1_uwrxv")]
+[node name="player" parent="." unique_id=1435591351 instance=ExtResource("1_uwrxv")]
 position = Vector2(-4437, 9)
 
-[node name="player2" parent="." unique_id=818111823 groups=["player"] instance=ExtResource("2_yqjtg")]
+[node name="player2" parent="." unique_id=818111823 instance=ExtResource("2_yqjtg")]
 position = Vector2(4175, -47)
 player_number = 2
 

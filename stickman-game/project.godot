@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="STICKMAN GAME"
-run/main_scene="uid://cfxxkxf5foum3"
+run/main_scene="uid://c1qyxmdkayqsp"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://ci2vgm2qwda6x"
+GameManager="*uid://dwu36lc0kvogr"
 
 [display]
 

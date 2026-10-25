@@ -35,10 +35,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.1666667),
+"times": PackedFloat32Array(0.01, 3.1666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2218, 2414), Vector2(13022, 1929)]
+"values": [Vector2(-8806, -6000), Vector2(-1095, -6000)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04qyp"]
@@ -48,12 +48,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyxub"]
-size = Vector2(41640, 1272.0001)
+size = Vector2(38685, 1272.0001)
 
 [node name="Node2D" type="Node2D" unique_id=34997701]
 
 [node name="SpaceshipHangar" type="Sprite2D" parent="." unique_id=1073539860]
-position = Vector2(12754, 7515.0005)
+position = Vector2(49.000977, 67)
 scale = Vector2(24, 27.057)
 texture = ExtResource("1_4dvvg")
 
@@ -111,7 +111,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0)
 libraries/ = SubResource("AnimationLibrary_04qyp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1632324500]
-position = Vector2(3869.4346, 2339.8657)
+position = Vector2(-9017, -5008)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=920584356]
 position = Vector2(-5577.434, 14043.134)
@@ -149,6 +149,6 @@ region_enabled = true
 region_rect = Rect2(0, 351.74265, 261.03888, 59.583862)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1237065547]
-position = Vector2(15152.565, 17359.135)
+position = Vector2(8977.499, 14035)
 shape = SubResource("RectangleShape2D_jyxub")
 debug_color = Color(0, 0.6, 0.7019608, 0)
