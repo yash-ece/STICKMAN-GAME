@@ -1,35 +1,40 @@
-extends Area2D
+extends RigidBody2D
 
-@export var damage: int = 15
-@export var owner_player_number: int = 1
-
-var hit_players: Dictionary = {}
+@export var damage: int = 2
 
 func _ready() -> void:
-	add_to_group("swords")
+	contact_monitor = true
+	max_contacts_reported = 20
 	body_entered.connect(_on_body_entered)
 
-func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("stickman_parts"):
+
+func _on_body_entered(body: Node) -> void:
+	# Ignore swords and all objects except Player 1's body parts
+	if body.name not in [
+		"torso",
+		"head",
+		"upper right arm",
+		"lower right arm",
+		"upper left arm",
+		"lower left arm",
+		"upper right leg",
+		"lower right leg",
+		"upper left leg",
+		"lower left leg"
+	]:
 		return
 
-	if not body.has_meta("stickman_root"):
+	# Confirm this body part belongs to Player 1
+	var player = body.get_parent()
+
+	while player != null and not player.has_method("take_sword_damage"):
+		player = player.get_parent()
+
+	if player == null:
 		return
 
-	var opponent = body.get_meta("stickman_root")
-
-	if opponent.player_number == owner_player_number:
+	if player.player_number != 1 or player.is_dead:
 		return
 
-	if opponent.is_dead:
-		return
-
-	var opponent_id: int = opponent.get_instance_id()
-
-	if hit_players.has(opponent_id):
-		return
-
-	hit_players[opponent_id] = true
-	opponent.take_sword_damage(damage)
-
-	print("Sword hit Player ", opponent.player_number)
+	player.take_sword_damage(damage)
+	print("RedSword hit Player 1: ", body.name)

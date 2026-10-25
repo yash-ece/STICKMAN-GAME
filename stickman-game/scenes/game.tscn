@@ -17,12 +17,6 @@ b = Vector2(10238, -449)
 [node name="GAME" type="Node2D" unique_id=1199620908]
 position = Vector2(-7, 4)
 
-[node name="player" parent="." unique_id=1435591351 instance=ExtResource("1_uwrxv")]
-position = Vector2(-4437, 9)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1874983657]
-zoom = Vector2(0.05, 0.05)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1371159960]
 position = Vector2(11, 1024)
 
@@ -42,6 +36,12 @@ shape = SubResource("SegmentShape2D_0a447")
 position = Vector2(-910, -7155)
 shape = SubResource("SegmentShape2D_uwrxv")
 
-[node name="player2" parent="." unique_id=818111823 instance=ExtResource("2_yqjtg")]
+[node name="player" parent="." unique_id=1435591351 groups=["player"] instance=ExtResource("1_uwrxv")]
+position = Vector2(-4437, 9)
+
+[node name="player2" parent="." unique_id=818111823 groups=["player"] instance=ExtResource("2_yqjtg")]
 position = Vector2(4175, -47)
 player_number = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=881999121]
+zoom = Vector2(0.05, 0.05)

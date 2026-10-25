@@ -104,19 +104,19 @@ position = Vector2(408.00003, -71.99999)
 rotation = 2.5652423
 shape = SubResource("CapsuleShape2D_b135w")
 
-[node name="ironsword" type="Area2D" parent="lower right arm" unique_id=1767056331]
+[node name="ironsword" type="RigidBody2D" parent="lower right arm" unique_id=2008234984]
 script = ExtResource("6_ngimn")
-
-[node name="Sprite2D" type="Sprite2D" parent="lower right arm/ironsword" unique_id=505161146]
-position = Vector2(368, 128)
-scale = Vector2(1.0231116, 0.9960541)
-texture = ExtResource("6_xfu11")
-offset = Vector2(203.30139, -321.26776)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lower right arm/ironsword" unique_id=456532455]
 position = Vector2(520, -103.999985)
 rotation = 1.5219356
 polygon = PackedVector2Array(-0.78147125, 15.9808655, -367.5218, -346.3636, -440.39313, -494.09912, -276.11023, -413.97968, 58.277534, -45.20758, 108.1739, -82.81549, 102.918564, -139.1394, 155.72589, -72.48071, 117, -16, 116, 8, 201, 102, 242, 115, 254.30737, 204.66492, 182.39331, 201.14835, 153.16663, 143.65225, 61.188488, 59.05899, 37.217133, 57.88678, -20, 111, -66.658745, 52.80728, -26.315758, 46.770508)
+
+[node name="Sprite2D" type="Sprite2D" parent="lower right arm/ironsword" unique_id=505161146]
+position = Vector2(368.00003, 127.999985)
+scale = Vector2(1.0231115, 0.9960541)
+texture = ExtResource("6_xfu11")
+offset = Vector2(203.30139, -321.26776)
 
 [node name="upper right arm" type="RigidBody2D" parent="lower right arm" unique_id=460758333]
 

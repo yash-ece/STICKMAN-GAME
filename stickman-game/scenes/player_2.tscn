@@ -168,9 +168,8 @@ position = Vector2(-344.00003, -64.000015)
 rotation = 0.6026075
 shape = SubResource("CapsuleShape2D_vg4fv")
 
-[node name="redsword" type="Area2D" parent="lower left arm" unique_id=1092333247]
+[node name="redsword" type="RigidBody2D" parent="lower left arm" unique_id=1986909780]
 script = ExtResource("10_t4bc4")
-owner_player_number = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="lower left arm/redsword" unique_id=1920228743]
 position = Vector2(-625, -180)
